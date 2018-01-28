@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>SWAPI page</title>
+	<!-- ANGULAR -->
+	<script src="vendors/angular.min.js"></script>
+	<script src="vendors/angular-route.min.js"></script>
+	<!--<script src="vendors/angular-aria.min.js"></script>-->
+	<!--<script src="vendors/angular-animate.min.js"></script>-->
+	<!--<script src="vendors/angular-messages.min.js"></script>-->
+	<!--<script src="vendors/angular-material.min.js"></script>-->
+	<!-- SCRIPTS -->
+	<script src="scripts/client.js"></script>
+	<script src="scripts/controllers/search.controller.js"></script>
+	<script src="scripts/controllers/favorites.controller.js"></script>
+
+	<!-- STYLING -->
+	<link rel="stylesheet" href="styles/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
+<body ng-app="myApp">
+<h1 class="appTitle" >MEAN Star Wars API Interface</h1>
+
+<nav class="navList" ng-include="'/views/templates/nav.html'">
+</nav>
+<main ng-view></main>
+
+</body>
+</html>
