@@ -28,19 +28,4 @@ router.post('/', (req, res) => {
 }); // end post route
 
 
-// GET route
-router.get('/', (req, res) => {
-	// Employee is a reference to the collection when finding things in the dB
-	newData.find({}, (error, allSwapiData) => {
-		if (error) {
-			console.log('error on find: ', error);
-			res.sendStatus(500);
-		} else {
-			console.log('found Swapi Documents: ', allSwapiData);
-			res.send(allSwapiData);
-		}
-	}); // end find
-}); // end get route
-
-
 module.exports = router;

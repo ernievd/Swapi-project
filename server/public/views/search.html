@@ -1,17 +1,25 @@
-<h1>{{vm.whoAmI}}</h1>
 
-<button class="navLi"><a href="#!/favorites">Enter Data</a></button>
 
 
 <form name="EmployeeForm">
-	Name :
-	<input type="text" ng-model="vm.newSwapi.name" class="inputLabel name" required />
-	Type:
-	<input type="text" ng-model="vm.newSwapi.type" class="inputLabel salary" />
-	Born date:
-	<input type="text" ng-model="vm.newSwapi.bornOnDate" class="inputLabel hireDate" />
-	<button class="btnAddEmp button buttonBlue" ng-click="vm.addSwapi(vm.newSwapi)">
-		Add SWAPI</button>
 
-	{{vm.swapiData[0].name}}
+	<button class="navLi" ng-click="vm.searchApi(vm.swapiSearch.category,vm.swapiSearch.keyWord)">Search with selected values</button>
+	<select ng-model="vm.swapiSearch.category">
+		<option value="" disabled selected>Select your category</option>
+		<option value="people">People</option>
+		<option value="planets">Planets</option>
+	</select>
+
+	<input type="text" placeholder = "Enter Keyword" ng-model="vm.swapiSearch.keyWord" class="inputLabel name"/>
+
 </form>
+
+<ul class="trackList" ng-repeat="chosenOne in vm.apiResponse.data.results">
+	<li>
+		<label>Name: </label><p>{{chosenOne.name}}</p>
+		<label>Birth Year: </label><p>{{chosenOne.birth_year}}</p>
+		<label>Gender: </label> <p>{{chosenOne.gender}}</p>
+		<button class="navLi" ng-click="vm.addToFavorites(chosenOne,vm.swapiSearch.category)">Add to Favorites</button>
+	</li>
+</ul>
+

@@ -2,10 +2,11 @@ const mongoose = require('mongoose');
 
 let swapiSchema = new mongoose.Schema(
 	{
-		name: {type: String, unique: false, required: true},
-		// idNumber: {type: Number, unique: true, required: true},
-		type: {type: String, unique: false, required: true},
-		bornOnDate : {type: Date, unique: false, required: true}
+		name: {type: String, unique: true},
+		birth_year: {type: String, unique: false},
+		gender: {type: String, unique: false},
+		category: {type: String, unique: false},
+		link:   {type: String, unique: false},
 		// link: {type: String, unique: false, required: true}
 	}
 );

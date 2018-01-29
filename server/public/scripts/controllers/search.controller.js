@@ -6,16 +6,15 @@ myApp.controller('SearchController', ['$http', function ($http) {
 
 	};
 
-	self.whoAmI = 'In Search! :)';
-	self.searchHello();
 
 
 	self.newSwapi = {};
-	self.employees = [];
+	self.swapiSearch = {};
 
 
 
-	self.addSwapi = function (swapiData) {
+	self.addToFavorites = function (swapiData, category) {
+		swapiData.category = category;
 		console.log('in addSwapi... swapi data is -', swapiData)
 		$http.post('/search', swapiData)
 			.then(function (response) {
@@ -25,23 +24,27 @@ myApp.controller('SearchController', ['$http', function ($http) {
 			.catch(function (response) {
 				console.log('error on swapi post', response);
 			});
-	};
+	}; //End addToFavorites
 
 
-	self.getSwapi = function(){
-	 	$http.get('/search')
-	 		.then (function (response) {
-				console.log('Received swapi data response -', response);
-				self.swapiData = response.data;
 
-				// let totalSalary = 0;
-				// self.maxSalary = self.employeeData[0].salary
-				// self.lowestSalary = self.employeeData[0].salary;
-			})
-			.catch (function (response) {
-				console.log('swapi error on get request')
-			})
-	};
-	self.getSwapi();
+	// self.searchText="";
+	//
+
+	 self.searchApi = function(category, keyWord){
+		 console.log('searchstrings are  :',category + " " + keyWord);
+		 $http.get(`https://swapi.co/api/${category}/?search=${keyWord}`).then(function(response){
+			 console.log('search response ', response);
+			 self.apiResponse = response;
+		 });
+
+	    // self.showFlag = false;
+	    // self.showFlag = true;
+	    // console.log(self.showFlag);
+	}; //End of searchAPI
+
+
+	console.log('end of search controller');
+
 
 }]);

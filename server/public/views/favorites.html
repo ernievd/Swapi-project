@@ -1,1 +1,14 @@
-<h1>{{vm.whoAmI}}</h1>
+
+<h1>Favorites</h1>
+
+
+
+<ul class="trackList" ng-repeat="chosenOne in vm.swapiData.data">
+	<li>
+		<label>Name: </label><p>{{chosenOne.name}}</p>
+		<label>Birth Year: </label><p>{{chosenOne.birth_year}}</p>
+		<label>Gender: </label> <p>{{chosenOne.gender}}</p>
+		<!--<button class="navLi" ng-click="vm.removeFromFavorites(chosenOne,vm.swapiSearch.category)">Remove from Favorites</button>-->
+		<button class="deleteButton" ng-click="vm.removeFromFavorites(chosenOne._id)">Remove from Favorites</button>
+	</li>
+</ul>
