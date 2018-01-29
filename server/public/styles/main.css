@@ -34,7 +34,7 @@ a {
 
 ul {
     list-style-type: none;
-    margin-right: 50px;
+    margin-right: 20px;
 }
 
 button {
@@ -58,7 +58,8 @@ button {
 }
 
 form {
-    width: 450px;
+    width: 300px;
+    text-align: center;
     margin: .5em auto;
     padding: 3em 2em 2em 2em;
     background: #fafafa;
