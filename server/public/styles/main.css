@@ -1,11 +1,20 @@
-* {
-    box-sizing:border-box;
+/** {*/
+    /*box-sizing:border-box;*/
+/*}*/
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
 }
+
 
 body {
     font-family: Helvetica;
-    background: rgb(204, 204, 204);
-    -webkit-font-smoothing: antialiased;
+    background: url('/images/starwars-wallpaper2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*background: rgb(204, 204, 204);*/
+    /*-webkit-font-smoothing: antialiased;*/
 }
 
 hgroup {
@@ -15,7 +24,7 @@ hgroup {
 .appTitle {
     font-family: 'Montserrat', sans-serif;
     font-size: 40px;
-    color: #4a89dc;
+    color: bisque;
     font-weight: 900;
 }
 
@@ -26,7 +35,19 @@ h1 {
     text-align: center;
 
 }
+h4 {
+    text-align: center;
+}
+.green{
+    color: green;
+}
+.blue{
+    color: blue;
+}
 
+.red{
+    color: red;
+}
 a {
     display: inline;
     padding: 10px;
@@ -144,7 +165,7 @@ label {
 .buttonBlue:hover { background: #6196dc; }
 
 .trackList > li{
-    width: 450px;
+    width: 350px;
     margin: .5em auto;
     padding: 3em 2em 2em 2em;
     background: #fafafa;
@@ -168,7 +189,7 @@ label {
     position: relative;
     display: inline-block;
     padding: 12px 24px;
-    margin-left: 39%;
+    /*margin-left: 39%;*/
     font-size: 16px;
     /* width: 100%; */
     vertical-align: middle;

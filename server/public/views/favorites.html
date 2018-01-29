@@ -2,28 +2,32 @@
 <h1>Favorites</h1>
 
 
+<div class="flex-container">
+	<ul class="trackList" ng-repeat="chosenOne in vm.swapiData.data">
+		<li ng-if="chosenOne.category =='people'">
+			<h4 class="green">People Category</h4>
+			<label>Name: </label><p>{{chosenOne.name}}</p>
+			<label>Birth Year: </label><p>{{chosenOne.birth_year}}</p>
+			<label>Gender: </label> <p>{{chosenOne.gender}}</p>
+			<!--<button class="navLi" ng-click="vm.removeFromFavorites(chosenOne,vm.swapiSearch.category)">Remove from Favorites</button>-->
+			<button class="deleteButton" ng-click="vm.removeFromFavorites(chosenOne._id)">Remove from Favorites</button>
+		</li>
 
-<ul class="trackList" ng-repeat="chosenOne in vm.swapiData.data">
-	<li ng-if="chosenOne.category =='people'">
-		<label>Name: </label><p>{{chosenOne.name}}</p>
-		<label>Birth Year: </label><p>{{chosenOne.birth_year}}</p>
-		<label>Gender: </label> <p>{{chosenOne.gender}}</p>
-		<!--<button class="navLi" ng-click="vm.removeFromFavorites(chosenOne,vm.swapiSearch.category)">Remove from Favorites</button>-->
-		<button class="deleteButton" ng-click="vm.removeFromFavorites(chosenOne._id)">Remove from Favorites</button>
-	</li>
+		<li ng-if="chosenOne.category =='planets'">
+			<h4 class="blue">Planets Category</h4>
+			<label>Name: </label><p>{{chosenOne.name}}</p>
+			<label>Climate: </label><p>{{chosenOne.climate}}</p>
+			<label>Terrain: </label> <p>{{chosenOne.terrain}}</p>
+			<button class="deleteButton" ng-click="vm.removeFromFavorites(chosenOne._id)">Remove from Favorites</button>
+		</li>
 
-	<li ng-if="chosenOne.category =='planets'">
-		<label>Name: </label><p>{{chosenOne.name}}</p>
-		<label>Climate: </label><p>{{chosenOne.climate}}</p>
-		<label>Terrain: </label> <p>{{chosenOne.terrain}}</p>
-		<button class="deleteButton" ng-click="vm.removeFromFavorites(chosenOne._id)">Remove from Favorites</button>
-	</li>
+		<li ng-if="chosenOne.category =='starships'">
+			<h4 class="red">Starships Category</h4>
+			<label>Name: </label><p>{{chosenOne.name}}</p>
+			<label>Model: </label><p>{{chosenOne.model}}</p>
+			<label>Class: </label> <p>{{chosenOne.starship_class}}</p>
+			<button class="deleteButton" ng-click="vm.removeFromFavorites(chosenOne._id)">Remove from Favorites</button>
+		</li>
 
-	<li ng-if="chosenOne.category =='starships'">
-		<label>Name: </label><p>{{chosenOne.name}}</p>
-		<label>Model: </label><p>{{chosenOne.model}}</p>
-		<label>Class: </label> <p>{{chosenOne.starship_class}}</p>
-		<button class="deleteButton" ng-click="vm.removeFromFavorites(chosenOne._id)">Remove from Favorites</button>
-	</li>
-
-</ul>
+	</ul>
+</div>
