@@ -1,1 +1,17 @@
 <h1>{{vm.whoAmI}}</h1>
+
+<button class="navLi"><a href="#!/favorites">Enter Data</a></button>
+
+
+<form name="EmployeeForm">
+	Name :
+	<input type="text" ng-model="vm.newSwapi.name" class="inputLabel name" required />
+	Type:
+	<input type="text" ng-model="vm.newSwapi.type" class="inputLabel salary" />
+	Born date:
+	<input type="text" ng-model="vm.newSwapi.bornOnDate" class="inputLabel hireDate" />
+	<button class="btnAddEmp button buttonBlue" ng-click="vm.addSwapi(vm.newSwapi)">
+		Add SWAPI</button>
+
+	{{vm.swapiData[0].name}}
+</form>

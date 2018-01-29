@@ -11,8 +11,8 @@ myApp.controller('FavoritesController', ['$http', function ($http) {
 	self.newEmployee = {};
 	self.employees = [];
 
-	// self.addEmployee = function (employee) {
-	// 	$http.post('/employees', employee)
+	// self.addSwapiData = function (swapiData) {
+	// 	$http.post('/employees', swapiData)
 	// 		.then(function (response) {
 	// 			console.log('post response', response);
 	// 			self.newEmployee = {};
